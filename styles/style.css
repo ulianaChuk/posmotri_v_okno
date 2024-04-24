@@ -46,7 +46,6 @@ ol {
 
 .content {
   display: flex; 
-  /* justify-content: center; */
   align-items: flex-end;
   width: 100%;
   margin-left: 30px;
@@ -270,12 +269,13 @@ fieldset {
   border-width: 1px 0px;
   border-style: solid;
   border-color: #ffffff;
-
   padding: 2.5px;
 }
+
 .search-form__textfield:hover {
   text-decoration: none;
 }
+
 .search-form__textfield:active {
   border: 1px solid #ffffff;
 }
@@ -302,16 +302,20 @@ fieldset {
   line-height: 22px;
   white-space: nowrap;
 }
+
 .button:hover {
   text-decoration: underline;
 }
+
 .button:active {
   background-color: #545050;
   text-decoration: none;
 }
+
 .button:focus {
   outline: none;
 }
+
 .button:focus-visible {
   outline: 1px solid #ffffff;
   outline-offset: 1px;
