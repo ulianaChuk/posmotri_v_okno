@@ -19,7 +19,7 @@ html {
   /* мой код */
   display: flex;
   justify-content: center;
-  align-items:center
+  align-items: center;
   /* конец моего кода */
 }
 
@@ -45,17 +45,18 @@ ol {
 /* Мой код */
 
 .content {
-  display: flex; 
+  display: flex;
   align-items: flex-end;
   width: 100%;
   margin-left: 30px;
   margin-right: 30px;
   gap: 30px;
 }
-.result{
+
+.result {
   display: flex;
-    flex-direction: column;
-    gap: 16px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .search-form {
@@ -68,6 +69,8 @@ ol {
 .content__list {
   width: 399px;
   height: 298px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: auto;
   flex: none;
   position: relative;
@@ -83,7 +86,6 @@ ol {
 .result__video-container {
   width: 711px;
   height: 386px;
-  margin-bottom: 16px;
   position: relative;
 }
 
@@ -101,20 +103,15 @@ ol {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-}
-
-.content__video-card:hover {
-  text-decoration: underline;
-}
-
-.content__video-card:active {
-  background-color: #545050;
+  outline: none;
 }
 
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
   flex: none;
+  object-position: center;
+  object-fit: cover;
 }
 
 .content__video-card-description-container {
@@ -124,8 +121,8 @@ ol {
 .search-form__fieldset-title {
   font-size: 18px;
   font-weight: 400;
-  line-height: 21.6px;
   text-align: left;
+  margin-bottom: 5px;
 }
 
 .title {
@@ -146,7 +143,26 @@ ol {
   display: block;
   text-decoration: none;
   color: #ffffff;
-  margin:2px;
+  margin: 2px;
+}
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+.content__card-link_current {
+  background-color: #545050;
+}
+.content__card-link_current:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #ffffff;
+  outline-offset: 1px;
 }
 
 .content__video-card-title {
@@ -160,20 +176,11 @@ ol {
 }
 
 .content__video-card-description {
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 90%;
-}
-
-.content__video-card_label:focus {
-  outline: none;
-}
-
-.content__video-card:focus-visible {
-  outline: 1px solid #ffffff;
-  outline-offset: 1px;
 }
 
 /* Элементы формы и кнопки */
@@ -188,7 +195,7 @@ ol {
   white-space: nowrap;
 }
 
-fieldset {
+.search-form__fieldset {
   border: none;
 }
 
@@ -201,11 +208,12 @@ fieldset {
 .search-form__label {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: fit-content;
   cursor: pointer;
 }
 
-.search-form__label:not(:has(input[type="text"])):hover {
+.search-form__label:not(:has(.search-form__textfield)):hover {
   text-decoration: underline;
 }
 
@@ -243,7 +251,7 @@ fieldset {
   height: 100%;
   border: 1px solid #000;
   background-color: #fff;
-  }
+}
 
 /* текстовая форма */
 
@@ -257,10 +265,11 @@ fieldset {
   width: 225px;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.7);
-
-  border-width: 1px 0px;
+  border: 1px;
   border-style: solid;
   border-color: #ffffff;
+  border-left-color: transparent;
+  border-right-color: transparent;
   padding: 2.5px;
 }
 
@@ -275,6 +284,7 @@ fieldset {
 .search-form__textfield:focus {
   outline: none;
 }
+
 .search-form__textfield:focus-visible {
   outline: 1px solid #ffffff;
   outline-offset: 1px;
@@ -322,5 +332,3 @@ fieldset {
   padding: 6px 146.5px;
   width: 100%;
 }
-
-
