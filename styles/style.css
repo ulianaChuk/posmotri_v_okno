@@ -48,8 +48,7 @@ ol {
   display: flex;
   align-items: flex-end;
   width: 100%;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin: 0 30px;
   gap: 30px;
 }
 
@@ -64,20 +63,18 @@ ol {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  height: 54px;
 }
 
 .content__list {
   width: 399px;
   height: 298px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: auto;
-  flex: none;
+  overflow-y: auto;
   position: relative;
 }
 
 .content__details {
-  height: 100%;
+  /* height: 100%; */
   gap: 26px;
   display: flex;
   flex-direction: column;
@@ -90,39 +87,36 @@ ol {
 }
 
 .result__video {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .content__list-item:not(:last-child) {
-  margin-bottom: 32px;
+  padding-bottom: 30px;
 }
 
 .content__video-card {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: start;
   outline: none;
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
+  min-width: 194px;
   height: 103px;
-  flex: none;
   object-position: center;
   object-fit: cover;
 }
 
 .content__video-card-description-container {
-  flex: 1;
-}
-
-.search-form__fieldset-title {
-  font-size: 18px;
-  font-weight: 400;
-  text-align: left;
-  margin-bottom: 5px;
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-top: 3px;
 }
 
 .title {
@@ -133,6 +127,7 @@ ol {
   line-height: 94%;
   text-transform: uppercase;
   text-align: left;
+  height: 210px;
 }
 
 .content__accent {
@@ -172,7 +167,11 @@ ol {
   font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
-  padding-bottom: 5px;
+  padding-bottom: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 30px;
 }
 
 .content__video-card-description {
@@ -181,6 +180,8 @@ ol {
   font-weight: 400;
   font-size: 18px;
   line-height: 90%;
+  white-space: wrap;
+  height: 65px;
 }
 
 /* Элементы формы и кнопки */
@@ -197,6 +198,12 @@ ol {
 
 .search-form__fieldset {
   border: none;
+}
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 .search-form__checkbox-list {
@@ -217,13 +224,9 @@ ol {
   text-decoration: underline;
 }
 
-.search-form__label:focus {
-  outline: none;
-}
-
-.search-form__label:focus-visible {
-  outline: 1px solid #ffffff;
-  outline-offset: 1px;
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
 }
 
 .search-form__label-text {
